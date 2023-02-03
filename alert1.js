@@ -56,3 +56,45 @@ function letterCase(a,b) {
 }
 letterCase();
 
+let numm = 0;
+while (numm < 6) {
+  console.log(numm);
+  numm++
+}
+
+do {
+  console.log(numm);
+  numm++
+} while (numm < 6);
+
+for (numm = 0; numm < 6; numm++) {
+  console.log(numm)
+}
+
+let nom = 8; 
+while (nom) {
+  console.log(nom);
+  nom--;
+}
+
+nom = 0;
+while (nom < 3) {
+  console.log('Число: ${nom}');
+  nom++
+}
+
+stopSize: for (let num = 0; num < 2; num++) {
+   for (let size = 0; size < 3; size++) {
+    if (size == 1) {
+      break stopSize;
+    }
+    console.log(size);
+   }
+}
+
+simpleNum: for (let i = 2; i <= 10, i++) {
+  for (let a = 2; a < i; a++) {
+    if (i % a == 0) continue simpleNum;
+  }
+  alert(i);
+}
