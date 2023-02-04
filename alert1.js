@@ -98,3 +98,8 @@ simpleNum: for (let i = 2; i <= 10, i++) {
   }
   alert(i);
 }
+
+let n = prompt('How many sheep?', '');
+if (+n > 0) {
+  alert(n + 'sheep...')
+}
