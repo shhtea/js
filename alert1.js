@@ -42,19 +42,22 @@ newStr = 'A';
 alert(typeof(newStr));
 
 
-function letterCase(a,b) {
-  if (typeof a !== 'string' || typeof b !== 'string') {
+function letterCase(lr1, lr2) {
+  if (typeof lr1 !== 'string' || typeof lr2 !== 'string') {
     alert(-1);
   } else {
-    if (('a'.toUpperCase() == a) && ('b'.toUpperCase() == b)
-    || ('a'.toLowerCase() == a) && ('b'.toLowerCase() == b)) {
+    if ((lr1.toUpperCase() === lr1) && (lr2.toUpperCase() === lr2)
+    || (lr1.toLowerCase() === lr1) && (lr2.toLowerCase() === lr2)) {
       alert(1);
     } else {
       alert(0);
     }
   }
 }
-letterCase();
+letterCase(8, 9);
+letterCase('g', 'l');
+letterCase('K','L');
+letterCase('f', 'L');
 
 let numm = 0;
 while (numm < 6) {
@@ -92,7 +95,7 @@ stopSize: for (let num = 0; num < 2; num++) {
    }
 }
 
-simpleNum: for (let i = 2; i <= 10, i++) {
+simpleNum: for (let i = 2; i <= 10; i++) {
   for (let a = 2; a < i; a++) {
     if (i % a == 0) continue simpleNum;
   }
@@ -101,5 +104,26 @@ simpleNum: for (let i = 2; i <= 10, i++) {
 
 let n = prompt('How many sheep?', '');
 if (+n > 0) {
-  alert(n + 'sheep...')
+  alert(n + ' sheep...')
+} else {
+  alert('try again')
 }
+
+let s = prompt('How many sheep?', '');
+let sheepString = ''
+if (s > 0) {
+  for (i = s - (s - 1); i <= s; i++) {
+    sheepString = sheepString + (i + ' sheep...');
+  }
+  alert(sheepString);
+}
+
+let numberStairs = prompt('write a number', '');
+let stairs = '';
+for (i = numberStairs; i > 1; i--) {
+  stairs += 'I/n '
+
+}
+alert(stairs + 'I');
+
+
