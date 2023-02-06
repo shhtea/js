@@ -1,3 +1,4 @@
+'use strict'
 let num;
 
 do {
@@ -126,4 +127,83 @@ for (i = numberStairs; i > 1; i--) {
 }
 alert(stairs + 'I');
 
+function calcSum(numOne, numTwo) {
+  if (numTwo === 1) {
+    return numOne;
+  } else {
+    return numOne * calcSum(numOne, numTwo - 1);
+  }
+}
+console.log(calcSum(2,3));
 
+let getMessage = (text, nam) => {
+  let message = text + ',' + nam + '!';
+  return message
+}
+console.log(getMessage('Привет', 'Вася'));
+
+let getMes = (text, nam) => text + ',' + nam + '!';
+console.log(getMes('Привет', 'Вася'));
+
+function showMess(text, name) {
+  console.log(`${text}, ${name}!`);
+}
+setTimeout(showMess, 5000, 'Hello', 'Vasya');
+
+function showMess(text, name) {
+  console.log(`${text}, ${name}!`);
+}
+setInterval(showMess, 5000, 'Hello', 'Vasya');
+
+function showMess(text, name) {
+  console.log(`${text}, ${name}!`);
+  setTimeout(showMess, 5000, 'Hello', 'Vasya');
+}
+setTimeout(showMess, 5000, 'Hello', 'Vasya');
+
+function showNumber(num) {
+    if (num < 10) {
+     setTimeout(showNumber, 1000, ++ num);
+     console.log(num);
+  }
+}
+setTimeout(showNumber,1000,0);
+
+function showName() {
+  console.log('Vasya');
+}
+setTimeout(showName,0);
+console.log('Kolya');
+
+showMess();
+function showMess() {
+  console.log('mess');
+}
+
+function countNumbeer(num) {
+  console.log(num);
+  let timeId = setTimeout(countNumbeer,1000,++num);
+  if (num === 10) {
+    clearTimeout(timeId);
+  }
+}
+setTimeout(countNumbeer,1000,1);
+
+let res = 0;
+function countNum(num) {
+  res += num;
+  console.log(res);
+  if (res === 10) {
+    clearInterval(timeId)
+  }
+}
+let timeId = setInterval(countNum, 1000, 1);
+
+'use strict';
+
+if (2 > 1) {
+  function showMess() {
+    console.log('message');
+  }
+  showMess();
+}
