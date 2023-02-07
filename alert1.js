@@ -207,3 +207,50 @@ if (2 > 1) {
   }
   showMess();
 }
+
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Родители разрешили?');
+  }
+}
+
+function checkAge(age) {
+  return (age > 18) ? true : confirm('Родители разрешили?');
+}
+
+function checkAge(age) {
+  return (age > 18) || confirm('Родители разрешили?');
+}
+
+function min(a,b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+function min(a,b) {
+  return (a < b) ? a : b;
+}
+
+function pow(x,m) {
+  let res = 1
+  if (x > 0 && m > 0) {
+    for (i = 0; i < m; i++) {
+      res *= x;
+   
+     }
+     return res;
+  } else {
+    alert('enter number > 0');
+  }
+ 
+}
+let x = prompt('enter x');
+let m = prompt('enter n');
+alert(pow(x, m));
+
+
