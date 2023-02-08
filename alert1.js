@@ -238,19 +238,16 @@ function min(a,b) {
 
 function pow(x,m) {
   let res = 1
-  if (x > 0 && m > 0) {
-    for (i = 0; i < m; i++) {
-      res *= x;
-   
-     }
-     return res;
-  } else {
-    alert('enter number > 0');
+  for (i = 0; i < m; i++) {
+   res *= x;
   }
- 
+  return res;
 }
 let x = prompt('enter x');
-let m = prompt('enter n');
-alert(pow(x, m));
+let m = prompt('enter m');
 
-
+if (x > 0 && m > 0) {
+  alert(pow(x,m));
+} else {
+  alert('enter number > 0');
+}
