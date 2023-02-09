@@ -251,3 +251,36 @@ if (x > 0 && m > 0) {
 } else {
   alert('enter number > 0');
 }
+
+const userInfo = {
+  name: 'Vasya',
+  age: 30,
+  'likes js':true,
+}
+console.log(userInfo['likes js']);
+
+let userInfo1 = {
+  name: 'Vasya',
+  age: 30,
+  58: 'Something',
+}
+console.log(userInfo1[58]);
+
+let userInfo2 = {
+  name: 'Vasya',
+  age: 30,
+  address: {
+    city: 'New York',
+  }
+}
+for (const key in userInfo2.address) {
+  console.log(userInfo2.address[key]);
+}
+
+let userInfo3 = {};
+userInfo3.name = 'Vasya';
+userInfo3.age = 30;
+userInfo3.name = 'Lena';
+console.log(userInfo3);
+delete userInfo3.name;
+console.log(userInfo3);
