@@ -284,3 +284,28 @@ userInfo3.name = 'Lena';
 console.log(userInfo3);
 delete userInfo3.name;
 console.log(userInfo3);
+
+function defineNumber(x) {
+  if (x % 2 == 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+}
+
+function defineNumber(x) {
+  return (x % 2 == 0) ? 'Even' : 'Odd';
+}
+
+
+
+let promise = new Promise(function(resolve, reject) {
+  let numb = Math.floor(Math.random(10) * 10);
+  console.log(numb);
+  if (numb > 5) {
+    setTimeout(() => resolve(numb), 20000);
+  } else {
+    setTimeout(() => reject('too small'), 2000);
+  }
+  
+});
