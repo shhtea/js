@@ -309,3 +309,41 @@ let promise = new Promise(function(resolve, reject) {
   }
   
 });
+
+let numOne = Math.round((1.005 + Number.EPSILON) * 100) / 100;
+console.log(1.005 * 100);
+console.log(numOne);
+
+let value = '135.58px';
+console.log(parseFloat(value));
+console.log(parseInt(value));
+
+let val = 58 + 'Free';
+if (isNaN(val)) {
+  console.log('it is NaN');
+}
+
+let max = Math.max(10, 58, 39, -150, 0);
+console.log(max);
+
+let d = 58.858;
+console.log(Math.floor(d));
+
+var summation = function (num) {
+  let res = 0;
+  for (i = 1; i <= num; i++) {
+    res += i;
+  }
+  return res;
+}
+summation(6)
+
+function solution(str){
+  let res = '';
+    let l = str.length;
+  for (i = l - 1; i >= 0; i--) {
+    res += str[i];
+  }
+  return res;
+}
+solution('world');
