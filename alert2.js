@@ -53,11 +53,52 @@ function highAndLow(numbers){
     
 highAndLow("1 2 -3 4 5");
 
+
 function descendingOrder(n){
   let str = '' + n;
   let arr = [];
   for (let i = 0; i < str.length; i++) {
-    arr.push = str[i];
-    console.log(arr);
+    arr.push(str[i]);
   }
+  arr.sort((a, b) => a - b);
+  arr.reverse();
+  let res = arr.join('');
+  return +res;
 }
+descendingOrder(876543);
+
+function getMiddle(s)
+{
+  console.log(s.length);
+  let str = s.length / 2;
+  let res = '';
+  if (str == Math.floor(str)) {
+     res = res + s[str - 1] + s[str];
+  } else {
+    res += s[Math.floor(str)];
+  }
+  return res;
+}
+getMiddle("testing");
+
+function accum(s) {
+  let res = '';
+	for (let i = 0; i < s.length; i++) {
+    res += s[i].toUpperCase() + s[i].toLowerCase(); 
+  }
+  return res;
+}
+accum("abcd");
+
+function filter_list(l) {
+  let arr = [];
+  for (let i = 0; i < l.length; i++) {
+    if (typeof l[i] == 'number') {
+      arr.push(l[i]);
+    }else {
+      arr == arr;
+    }
+  return arr;
+}
+}
+filter_list([1,2,'a','b']);
