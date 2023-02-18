@@ -102,3 +102,8 @@ function filter_list(l) {
 }
 }
 filter_list([1,2,'a','b']);
+
+function findShort(s){
+  let arr = str.split('');
+  let res = arr.map()
+}
