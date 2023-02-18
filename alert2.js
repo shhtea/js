@@ -103,7 +103,101 @@ function filter_list(l) {
 }
 filter_list([1,2,'a','b']);
 
-function findShort(s){
-  let arr = str.split('');
-  let res = arr.map()
+function findShort(s) {
+  let arr = s.split(' ');
+  let arrLength = arr.map(item => item.length);
+  arrLength.sort((a, b) => a - b);
+  return arrLength[0];
+  
 }
+findShort("bitcoin take over the world maybe who knows perhaps");
+
+function XO(str) {
+  let resX = 0;
+  let resO = 0;
+  for (let i = 0; i < str.length; i++) {
+    switch (str[i]) {
+      case 'x':
+      case 'X':
+        resX += 1;
+        break;
+      case 'o':
+      case 'O':
+        resO += 1;
+        break;
+      default:
+        break;
+    }
+  }
+  if (resO == resX) {
+    return true;
+  } else {
+    return false;
+  }
+}
+XO("xxxooom");
+
+
+function isIsogram(str){
+  let str1 = str.toLowerCase();
+  let arr = [];
+  for (i = 0; i < str1.length; i++) {
+    arr.push(str1.codePointAt(i));
+  }
+  let res = 0;
+  arr.sort((a, b) => a - b);
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++) { 
+    if (arr[i] == arr[i + 1]) {
+      res += 1;
+    }else{
+      res += 0;
+    }
+  }
+   return res == 0 ? true : false;
+}
+isIsogram ("aba");
+
+function isIsogram(str){
+	return new Set(str.toUpperCase()).size == str.length;
+}
+isIsogram ("aba");
+
+var isSquare = function(n){
+  if ((n ** (1/2)) == Math.trunc(n ** (1/2))) {
+    return true;
+  } else{
+    return false; // fix me
+  }
+}
+isSquare(3)
+
+function isSquare(n) {
+  console.log(Math.sqrt(n) % 1);
+  console.log(2,45 % 1);
+  return Math.sqrt(n) % 1 === 0;
+  
+}
+isSquare(4)
+
+function DNAStrand(dna){
+  let newDna = '';
+  for (i = 0; i < dna.length; i++) {
+    switch (dna[i]) {
+      case 'A':
+        newDna += 'T';
+        break;
+      case 'T':
+        newDna += 'A';
+        break;
+      case 'C':
+        newDna += 'G';
+        break;
+      case 'G':
+        newDna += 'C';
+        break;
+    }
+  }
+  return newDna;
+}
+DNAStrand("ATTGC")
