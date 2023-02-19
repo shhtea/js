@@ -93,13 +93,15 @@ accum("abcd");
 function filter_list(l) {
   let arr = [];
   for (let i = 0; i < l.length; i++) {
-    if (typeof l[i] == 'number') {
-      arr.push(l[i]);
-    }else {
-      arr == arr;
+    switch (typeof l[i]) {
+      case 'number':
+        arr.push(l[i]);
+        break;
+      default:
+        break;
     }
+  }
   return arr;
-}
 }
 filter_list([1,2,'a','b']);
 
@@ -201,3 +203,61 @@ function DNAStrand(dna){
   return newDna;
 }
 DNAStrand("ATTGC")
+
+function sumTwoSmallestNumbers(numbers) {  
+  let arr = numbers;
+  arr.sort((a, b) => a-b);
+  return +arr[0] + +arr[1];
+}
+sumTwoSmallestNumbers([5, 8, 12, 19, 22]);
+
+function getSum(a, b)
+{
+  let res = 0;
+  if (a == b) {
+    res = a;
+  } else if (a < b) {
+    for (i = a; i <= b; i++){
+      res += i;
+    }
+  } else {
+    for (i = b; i <= a; i++) {
+      res += i;
+    }
+  }
+  return res;
+}
+getSum(-1,2)
+
+const GetSum = (a, b) => {
+  let min = Math.min(a, b),
+      max = Math.max(a, b);
+  return (max - min + 1) * (min + max) / 2;
+}
+getSum(10,2)
+
+function maskify(cc) {
+   let arr = [...cc];
+   let arrMask = arr.fill('#', 0, -4);
+   let res = arrMask.join('');
+   return res;
+}
+maskify('4556364607935616')
+
+function accum(s) {
+	let sBig = s.toUpperCase();
+  let res = sBig[0];
+  let resLit = '';
+  for (i = 1; i < s.length; i++) {
+      res = '-' + sBig[i] + resLit;
+      console.log(res);
+      for (j = 1; j < i + 1; j++) {
+      resLit += s[i].toLowerCase();
+      console.log(resLit);
+     }
+    //  res += '-' + s[i] + resLit;
+    //  console.log(res);
+return res;
+    }
+}
+accum("NyffsGeyylB")
