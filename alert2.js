@@ -261,3 +261,33 @@ return res;
     }
 }
 accum("NyffsGeyylB")
+
+function friend(friends){
+   let arr = [];
+   for (i = 0; i < friends.length; i++) {
+    if (friends[i].length == 4) {
+      arr.push(friends[i]);
+    }
+   }
+   return arr; 
+}
+friend(["Ryan", "Kieran", "Mark"]);
+
+function friend(friends){
+  return friends.filter(n => n.length === 4)
+}
+
+function openOrSenior(data){
+  let arr =[];
+  let arrData = data.flat();
+  for (i = 0; i < arrData.length; i += 2) {
+    if (arrData[i] >= 55  && arrData[i + 1] > 7) {
+      arr.push('Senior');
+    } else {
+      arr.push('Open');
+    }
+  }
+return arr;
+}
+
+openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]])
