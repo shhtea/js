@@ -291,3 +291,17 @@ return arr;
 }
 
 openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]])
+
+function printerError(s) {
+  let res = 0;
+  let len = s.length;
+  for (let i = 0; i < len; i++) {
+    if (s[i] > 'm') {
+      res += 1;
+    } else {
+      res += 0;
+    }
+  }
+  return `${res}/${len}`; 
+}
+printerError("aaaaaabbbbbbbbbmmmmmxyz")
