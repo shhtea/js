@@ -305,3 +305,26 @@ function printerError(s) {
   return `${res}/${len}`; 
 }
 printerError("aaaaaabbbbbbbbbmmmmmxyz")
+
+function findNextSquare(sq) {
+  if (Number.isInteger(Math.sqrt(sq))) {
+    return (Math.sqrt(sq) + 1) ** 2;
+  } else {
+    return -1;
+  }
+}
+findNextSquare(625);
+
+
+function solution(number){
+  let res = 0;
+  if (number > 0) {
+    for (let i = 1; i < number; i++) {
+      if (i % 3 == 0 || i % 5 == 0) {
+        res += i;
+      }
+    }
+  }
+  return res;
+} 
+solution(10);
