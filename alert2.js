@@ -328,3 +328,17 @@ function solution(number){
   return res;
 } 
 solution(10);
+
+function spinWords(string){
+  let arr = string.split(' ');
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length >= 5) {
+      let arrWord = [...arr[i]];
+      let arrWordRev = arrWord.reverse();
+      arr[i] = arrWordRev.join('')
+    }
+  } 
+return arr.join(' '); 
+}
+spinWords("Hey fellow warriors")
