@@ -361,3 +361,40 @@ function digitalRoot(n) {
   }
 }
 digitalRoot(493193)
+
+function likes(names) {
+  let sumNames = names.length - 2;
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+      break;
+    case 1:
+      return names[0] + " likes this";
+      break;
+    case 2:
+      return names[0] + ' and ' + names[1] + " like this";
+      break;
+    case 3:
+      return names[0] + ', ' + names[1] + ' and ' + names[2] + " like this";
+      break;
+    default:
+      return names[0] + ', ' + names[1] + ' and ' + sumNames + " like others this";
+      break;
+  }    
+}
+likes(["Jacob", "Alex","Alex"]);
+
+function createPhoneNumber(numbers){
+  let res = '';
+  for (i = 0; i < 3; i++) {
+    res += numbers[i];
+  }
+  let res1 = numbers.slice(3, 6);
+  let res2 = numbers.slice(6, 10)
+  return '(' + res + ')' + ' ' + res1.join('') + '-' + res2.join('');
+}
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+
+function createPhoneNumber(numbers){
+  return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
+}
