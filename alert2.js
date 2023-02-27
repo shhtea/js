@@ -342,3 +342,22 @@ function spinWords(string){
 return arr.join(' '); 
 }
 spinWords("Hey fellow warriors")
+
+function digitalRoot(n) {
+  let str = String(n);
+  let res = 0;
+  if (n > 9) {
+    for (let i = 0; i < str.length; i++) {
+      res += +str[i]
+    }
+    if (res > 9) {
+      return digitalRoot(res);
+    } else {
+      return res;
+    }
+    
+  } else {
+    return n;
+  }
+}
+digitalRoot(493193)
