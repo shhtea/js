@@ -398,3 +398,30 @@ createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
 function createPhoneNumber(numbers){
   return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
 }
+
+function findOutlier(integers){
+  integers.sort((a, b) => a - b);
+  let resEven = 0;
+  let resOdd = 0;
+  for (let i = 0; i < integers.length; i++) {
+    if (+integers[i] % 2 == 0) {
+      resEven += 1;
+    } else {
+      resOdd += 1;
+    }
+  }
+  if (resEven > resOdd) {
+    for (let i = 0; i < integers.length; i++) {
+      if (+integers[i] % 2 != 0) {
+        return +integers[i];
+      }
+    }
+  } else {
+    for (let i = 0; i < integers.length; i++) {
+      if (+integers[i] % 2 == 0) {
+        return +integers[i];
+      }
+  }
+}
+}
+findOutlier([2,6,8,10,3])
