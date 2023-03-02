@@ -425,3 +425,35 @@ function findOutlier(integers){
 }
 }
 findOutlier([2,6,8,10,3])
+
+var cubeChecker = function(volume, side){
+  if (volume <= 0 || side <= 0) {
+    return false;
+  } else if (side**3 == volume) {
+    return true;
+  } else {
+    return false;
+  }
+};
+cubeChecker(8, 2)
+
+function countSheeps(arrayOfSheep) {
+  let res = 0;
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] === true) {
+      res += 1;
+    }
+  }
+  return res;
+}
+
+function trim(str, size) {
+  if (str.length <= 3) {
+    return (str.slice(0, size) + '...');
+  } else if (str.length <= size) {
+      return str;
+  } else {
+    return str.slice(0, size - 3) + '...';
+  }
+}
+trim("XwCdS", 2)
