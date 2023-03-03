@@ -448,7 +448,7 @@ function countSheeps(arrayOfSheep) {
 }
 
 function trim(str, size) {
-  if (str.length <= 3) {
+  if (str.length <= 3 || size <= 3) {
     return (str.slice(0, size) + '...');
   } else if (str.length <= size) {
       return str;
@@ -456,4 +456,43 @@ function trim(str, size) {
     return str.slice(0, size - 3) + '...';
   }
 }
-trim("XwCdS", 2)
+trim("Hr", 4)
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    args.sort((a, b) => a - b);
+    return args[0];
+  }
+}
+
+function squareSum(numbers){
+  let res = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    res += numbers[i] ** 2;
+  }
+  return res;
+}
+squareSum([1,5])
+
+function positiveSum(arr) {
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      res += arr[i];
+    }
+  }
+  return res;
+}
+positiveSum([1,2,3,4,5])
+
+function alphabetPosition(text) {
+  let text1 = text.toLowerCase();
+  let arr = [];
+  for (let i = 0; i < text1.length; i++) {
+    if ((text1.codePointAt(i) - 96) > 0 && (text1.codePointAt(i) - 96) < 27) {
+      arr.push(text1.codePointAt(i) - 96);
+    }
+  }
+  return arr.join(' ') ;
+}
+alphabetPosition( "j}&/7a/=")
