@@ -496,3 +496,15 @@ function alphabetPosition(text) {
   return arr.join(' ') ;
 }
 alphabetPosition( "j}&/7a/=")
+
+function arrayDiff(a, b) {
+  let res = [];
+  for (let i = 0; i < a.length; i++) {
+    switch (b.includes(a[i])) {
+      case false:
+        res.push(a[i])
+    }
+  }
+return res;
+}
+arrayDiff([1,2,3], [1,2])
