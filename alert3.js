@@ -49,3 +49,45 @@ function narcissistic(value) {
         }
     }
 }
+
+function tribonacci(signature,n){
+    let resN = signature.flat();
+    let [n1, n2, n3, num] = resN;
+    let resSum = resN.slice(0, 3);
+    let res = [];
+    let n4 = 0;
+    if (num == 0) {
+        return res;
+    }else if (+num > 2) {
+        for (let i = 0; i < num - 3; i++) {
+          n4 = n1 + n2 + n3;
+          resSum.push(n4);
+          [n1, n2, n3] = [n2, n3, n4];
+        }
+        return resSum;
+    } else if (num <= 2) {
+        return resSum.slice(0, num);
+    } 
+  }
+ tribonacci([[1, 2, 1], 2])
+
+ let count = 0;
+ function persistence(num) {
+    let res = 1;
+    let str = ''+ num;
+    if (num > 9) {
+        count++;
+        for (i = 0; i < str.length; i++) {
+        res *= str[i];
+        console.log(res)
+        }
+        if (res > 9) {
+               return persistence(res);
+            } else {
+                return count;
+            } 
+        } else {
+            return 0;
+        }
+   }
+ persistence(2629193)
