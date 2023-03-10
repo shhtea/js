@@ -91,3 +91,38 @@ function tribonacci(signature,n){
         }
    }
  persistence(2629193)
+
+ function century(year) {
+    if (year % 100 == 0) {
+        return (year/100);
+    }else{
+        return (Math.ceil(year/100));
+    }
+    
+  }
+  century(1900)
+
+  function litres(time) {
+    return Math.floor(time * 0.5);
+  }
+  litres(11.8)
+
+  function basicOp(operation, value1, value2)
+{
+    let arr = [value1, operation, value2];
+    console.log(arr);
+    let res = (`${value1} ${operation} ${value2}`)
+    return res;
+}
+basicOp('+', 4, 7)
+
+function abbrevName(name){
+   let arr = [];
+   arr = name.split(' ');
+   let res = ''
+   for (let i = 0; i < arr.length; i++) {
+     res += arr[i].slice(0, 1) + '.';
+   }
+return res.toUpperCase().slice(0, -1);
+}
+abbrevName("david Mendieta fghjj")
