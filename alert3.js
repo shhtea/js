@@ -126,3 +126,19 @@ function abbrevName(name){
 return res.toUpperCase().slice(0, -1);
 }
 abbrevName("david Mendieta fghjj")
+
+function isTriangle(a,b,c)
+{
+  if ((a + b) > c && (a + c) > b && (b + c) > a) {
+    return true;
+  } else {
+    return false;
+  }
+}
+isTriangle(1,2,2)
+
+function addBinary(a,b) {
+  let num1 = parseInt((a + b), 2);
+  console.log(num1)
+}
+addBinary(1, 1)
