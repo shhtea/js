@@ -137,8 +137,46 @@ function isTriangle(a,b,c)
 }
 isTriangle(1,2,2)
 
-function addBinary(a,b) {
-  let num1 = parseInt((a + b), 2);
-  console.log(num1)
+function isDivisible(n, x, y) {
+  if (n % x == 0 && n % y == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
-addBinary(1, 1)
+isDivisible(3,3,4)
+
+function findUniq(arr) {
+  let set = new Set(arr);
+  let [num1, num2] = set;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == num1) {
+      if (arr[i+1] == num1 || arr[i+2] == num1) {
+        return num2;
+      }
+    }else{
+      return num1;
+    }
+  }
+}
+findUniq([ 3, 10, 3, 3, 3 ])
+
+function solution(str){
+  let arr = [];
+   if (str.length == 0) {
+    return arr;
+   } else if (str.length % 2 != 0) {
+     for (let i = 0; i < str.length - 1; i = i + 2) {
+       arr.push(str[i] + str[i+1])
+     }
+    arr.push(str[str.length - 1] + '_');
+    return arr;
+   } else {
+    for (let i = 0; i < str.length; i = i + 2) {
+      arr.push(str[i] + str[i+1])
+    }
+    return arr;
+   }
+  
+}
+solution("abcdefg")
