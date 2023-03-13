@@ -180,3 +180,36 @@ function solution(str){
   
 }
 solution("abcdefg")
+
+function isValidWalk(walk) {
+  let resN = 0;
+  let resS = 0;
+  let resW = 0;
+  let resE = 0;
+  if (walk.length === 10) {
+    for (let i = 0; i < 10; i++) {
+      switch (walk[i]) {
+        case 'n':
+          resN += 1;
+          break;
+        case 's':
+          resS += 1;
+          break;
+        case 'w':
+          resW += 1;
+          break;
+        case 'e':
+          resE += 1;
+          break;
+      }
+    }
+  if (resN == resS || resW == resE) {
+    return true;
+  } else {
+    return false;
+  }
+  } else {
+    return false;
+  }
+}
+isValidWalk(['n','n','n','s','n','s','n','s','n','s'])
