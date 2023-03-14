@@ -186,30 +186,38 @@ function isValidWalk(walk) {
   let resS = 0;
   let resW = 0;
   let resE = 0;
-  if (walk.length === 10) {
+  if (walk.length != 10) {
+    return false;
+  }else  {
     for (let i = 0; i < 10; i++) {
-      switch (walk[i]) {
-        case 'n':
-          resN += 1;
-          break;
-        case 's':
-          resS += 1;
-          break;
-        case 'w':
-          resW += 1;
-          break;
-        case 'e':
-          resE += 1;
-          break;
+      if (walk[i] == 'n') {
+        resN += 1;
+      }else if (walk[i] == 's') {
+        resS += 1;
+      }else if (walk [i] == 'w') {
+        resW += 1;
+      }else if (walk[i] == 'e') {
+        resE += 1;
       }
     }
-  if (resN == resS || resW == resE) {
-    return true;
-  } else {
-    return false;
-  }
-  } else {
-    return false;
+    if (resS == 5 && resN == 5 || resW == 5 && resE == 5) {
+      return true;
+    }else if (resS != 0 && resN != 0 && resW != 0 && resE != 0) {
+      if (resS - resN == 0 && resW - resE ==0) {
+        return true;
+      }else{
+        return false;
+      }
+    } return false;
   }
 }
-isValidWalk(['n','n','n','s','n','s','n','s','n','s'])
+isValidWalk(['w','e','w','e','w','e','w','e','w','e'])
+
+function isValidWalk(walk) {
+  const north = walk.filter(item => { return item === "n" }).length;
+  const south = walk.filter(item => { return item === "s" }).length;
+  const east = walk.filter(item => { return item === "e" }).length;
+  const west = walk.filter(item => { return item === "w" }).length;
+  
+  return walk.length === 10 && north === south && east === west;
+}
