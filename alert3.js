@@ -221,3 +221,14 @@ function isValidWalk(walk) {
   
   return walk.length === 10 && north === south && east === west;
 }
+
+function validatePIN (pin) {
+  if (pin.length === 4 || pin.length === 6) {
+    if (Number.isInteger(+pin) && pin == Math.abs(pin)) {
+      return true;
+    }
+  }else{
+    return false;
+  }
+}
+validatePIN("1234567")
