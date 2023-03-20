@@ -223,9 +223,12 @@ function isValidWalk(walk) {
 }
 
 function validatePIN (pin) {
-  if (pin.length === 4 || pin.length === 6) {
+  let pinCeil = Math.ceil(pin);
+  if (pin.length === 4 && pin.length === 6) {
     if (Number.isInteger(+pin) && pin == Math.abs(pin)) {
       return true;
+    }else{
+      return false;
     }
   }else{
     return false;
